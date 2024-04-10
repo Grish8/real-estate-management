@@ -57,7 +57,7 @@ export const signin = async (req, res, next) => {
 }; //create a cookie
 //go to insomnia server and also create a sign in
 
-
+// backend of continue with google
 export const google = async (req, res, next) => {
   try {
     const user = await User.findOne({ email: req.body.email });
