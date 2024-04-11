@@ -62,6 +62,7 @@ export const getListing = async (req, res, next) => {
   }
 };
 
+//getting listings from search and connect to insomnia api
 export const getListings = async (req, res, next) => {
   try {
     const limit = parseInt(req.query.limit) || 9;
