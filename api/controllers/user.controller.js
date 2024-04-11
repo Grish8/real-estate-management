@@ -12,6 +12,7 @@ export const test = (req, res) => {
 export const updateUser = async (req, res, next) => {
   if (req.user.id !== req.params.id)
     return next(errorHandler(401, 'You can only update your own account!'));
+
   try {
     if (req.body.password) {
       req.body.password = bcryptjs.hashSync(req.body.password, 10);
@@ -27,9 +28,12 @@ export const updateUser = async (req, res, next) => {
           avatar: req.body.avatar,
         },
       },
-      { new: true } //update new user
+      { new: true } // Update new user
     );
 
+    if (!updatedUser) {
+      return next(errorHandler(404, 'User not found'));
+    }
     const { password, ...rest } = updatedUser._doc; //separate password and rest
 
     res.status(200).json(rest);
@@ -55,14 +59,21 @@ export const getUserListings = async (req, res, next) => {
   if (req.user.id === req.params.id) {
     try {
       const listings = await Listing.find({ userRef: req.params.id });
+
+      if (listings.length === 0) {
+        return res.status(404).json({ message: 'No listings found for this user' });
+      }
+
       res.status(200).json(listings);
     } catch (error) {
-      next(error);
+      next(error); // Pass any errors to the error handling middleware
     }
   } else {
     return next(errorHandler(401, 'You can only view your own listings!'));
   }
-};  //create a server for this in users using get method
+};
+
+//create a server for this in users using get method
 
 export const getUser = async (req, res, next) => {
   try {
