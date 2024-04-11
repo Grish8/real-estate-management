@@ -50,6 +50,7 @@ export const deleteUser = async (req, res, next) => {
   }
 };
 
+
 export const getUserListings = async (req, res, next) => {
   if (req.user.id === req.params.id) {
     try {
@@ -61,7 +62,7 @@ export const getUserListings = async (req, res, next) => {
   } else {
     return next(errorHandler(401, 'You can only view your own listings!'));
   }
-};
+};  //create a server for this in users using get method
 
 export const getUser = async (req, res, next) => {
   try {
