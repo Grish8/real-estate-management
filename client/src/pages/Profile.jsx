@@ -18,6 +18,7 @@ import {
 } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 export default function Profile() {
   const fileRef = useRef(null);
   const { currentUser, loading, error } = useSelector((state) => state.user);
@@ -183,7 +184,7 @@ export default function Profile() {
             <span className='text-red-700'>
               Error Image upload (image must be less than 2 mb)
             </span>
-          ) : filePerc > 0 && filePerc < 100 ? (
+          ) : filePerc > 0 && filePerc < 200 ? (
             <span className='text-slate-700'>{`Uploading ${filePerc}%`}</span>
           ) : filePerc === 100 ? (
             <span className='text-green-700'>Image successfully uploaded!</span>
