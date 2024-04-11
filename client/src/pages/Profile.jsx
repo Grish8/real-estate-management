@@ -95,6 +95,8 @@ export default function Profile() {
     }
   };
 
+
+  //delete user functionality
   const handleDeleteUser = async () => {
     try {
       dispatch(deleteUserStart());
@@ -112,6 +114,7 @@ export default function Profile() {
     }
   };
 
+  //creating sign out 
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
