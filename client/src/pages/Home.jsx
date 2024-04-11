@@ -65,7 +65,7 @@ export default function Home() {
           to={'/search'}
           className='text-xs sm:text-sm text-blue-800 font-bold hover:underline'
         >
-          Let's get started...
+        <a href='https://estate.100jsprojects.com/search'>Let's get started...</a>  
         </Link>
       </div>
 
