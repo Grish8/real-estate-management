@@ -82,6 +82,7 @@ export default function TenantPage() {
             </ul>
           </div>
           {/* Notices */}
+          
           <div className='mt-4'>
             <h3 className='text-lg font-semibold mb-2'>Complaints</h3>
             <textarea
