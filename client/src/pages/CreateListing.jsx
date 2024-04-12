@@ -7,7 +7,7 @@ import {
 } from 'firebase/storage';
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import {  Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -370,7 +370,15 @@ export default function CreateListing() {
           {error && <p className='text-red-700 text-sm'>{error}</p>}
         </div>
       </form>
+
+      <Link to='/tenant'>
+            <li className='hidden sm:inline text-slate-700 hover:underline'>
+              Tenants Page
+            </li>
+          </Link>
     </main>
+
+    
   );
 }
 
