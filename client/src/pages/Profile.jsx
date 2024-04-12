@@ -29,6 +29,7 @@ export default function Profile() {
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [showListingsError, setShowListingsError] = useState(false);
   const [userListings, setUserListings] = useState([]);
+  const [loadingListings, setLoadingListings] = useState(false); // Add this line
   const dispatch = useDispatch();
 
   // firebase storage
@@ -135,7 +136,7 @@ export default function Profile() {
       }
       dispatch(deleteUserSuccess(data));
     } catch (error) {
-      dispatch(deleteUserFailure(data.message));
+     dispatch(signOutUserFailure(error.message));
     }
   }
   };
