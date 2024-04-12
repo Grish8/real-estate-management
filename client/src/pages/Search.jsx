@@ -219,12 +219,12 @@ export default function Search() {
               className='border rounded-lg p-3'
             >
               <option value='regularPrice_desc'>Price high to low</option>
-              <option value='regularPrice_asc'>Price low to hight</option>
+              <option value='regularPrice_asc'>Price low to high</option>
               <option value='createdAt_desc'>Latest</option>
               <option value='createdAt_asc'>Oldest</option>
             </select>
           </div>
-          <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95'>
+          <button className='bg-blue-700 text-white p-3 rounded-lg uppercase hover:opacity-95'>
             Search
           </button>
         </form>
@@ -262,3 +262,6 @@ export default function Search() {
     </div>
   );
 }
+
+//add change and submit functionality to the search page
+//create an api with insomnia server

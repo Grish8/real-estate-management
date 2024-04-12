@@ -98,6 +98,10 @@ export default function Profile() {
 
   //delete user functionality
   const handleDeleteUser = async () => {
+
+    const confirmed = window.confirm("Are you sure you want to delete your account?");
+  if (confirmed) {
+
     try {
       dispatch(deleteUserStart());
       const res = await fetch(`/api/user/delete/${currentUser._id}`, {
@@ -112,10 +116,15 @@ export default function Profile() {
     } catch (error) {
       dispatch(deleteUserFailure(error.message));
     }
+  }
   };
 
   //creating sign out 
   const handleSignOut = async () => {
+
+      const confirmed = window.confirm("Are you sure you want to sign out?");
+  if (confirmed) {
+
     try {
       dispatch(signOutUserStart());
       const res = await fetch('/api/auth/signout');
@@ -128,6 +137,7 @@ export default function Profile() {
     } catch (error) {
       dispatch(deleteUserFailure(data.message));
     }
+  }
   };
 
  
@@ -221,7 +231,7 @@ export default function Profile() {
         />
         <button
           disabled={loading}
-          className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
+          className='bg-blue-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
         >
           {loading ? 'Loading...' : 'Update'}
         </button>
