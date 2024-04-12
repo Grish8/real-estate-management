@@ -159,9 +159,21 @@ export default function CreateListing() {
   };
   return (
     <main className='p-3 max-w-4xl mx-auto'>
+
+   <Link to='/tenant'>
+  <li className='hidden sm:inline text-slate-700 hover:underline bg-green-500 text-white rounded-full py-2 px-4 sm:text-left'>
+    Tenants
+  </li>
+</Link>
+
+
       <h1 className='text-3xl font-semibold text-center my-7'>
         Create a Listing
       </h1>
+
+ 
+
+
       <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row gap-4'>
         <div className='flex flex-col gap-4 flex-1'>
           <input
@@ -371,11 +383,7 @@ export default function CreateListing() {
         </div>
       </form>
 
-      <Link to='/tenant'>
-            <li className='hidden sm:inline text-slate-700 hover:underline'>
-              Tenants Page
-            </li>
-          </Link>
+     
     </main>
 
     

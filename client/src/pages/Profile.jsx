@@ -140,23 +140,25 @@ export default function Profile() {
   }
   };
 
- 
   const handleShowListings = async () => {
+    setLoadingListings(true); // Set loading state to true before fetching listings
     try {
       setShowListingsError(false);
       const res = await fetch(`/api/user/listings/${currentUser._id}`);
       const data = await res.json();
       if (data.success === false) {
         setShowListingsError(true);
+        setLoadingListings(false); // Set loading state to false after fetching listings
         return;
       }
-
       setUserListings(data);
+      setLoadingListings(false); // Set loading state to false after fetching listings
     } catch (error) {
       setShowListingsError(true);
+      setLoadingListings(false); // Set loading state to false after fetching listings
     }
   };
-
+  
   const handleListingDelete = async (listingId) => {
     try {
       const res = await fetch(`/api/listing/delete/${listingId}`, {
