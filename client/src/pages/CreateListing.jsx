@@ -160,12 +160,13 @@ export default function CreateListing() {
   return (
     <main className='p-3 max-w-4xl mx-auto'>
 
-   <Link to='/tenant'>
+      <Link to='/landlord'>
   <li className='hidden sm:inline text-slate-700 hover:underline bg-green-500 text-white rounded-full py-2 px-4 sm:text-left'>
-    Tenants
+    Landlord View
   </li>
-</Link>
+</Link> 
 
+ 
 
       <h1 className='text-3xl font-semibold text-center my-7'>
         Create a Listing
@@ -382,7 +383,23 @@ export default function CreateListing() {
           {error && <p className='text-red-700 text-sm'>{error}</p>}
         </div>
       </form>
-
+           <Link
+  to="/profile"
+  style={{
+    marginTop: '20px',
+    display: 'inline-block',
+    backgroundColor: 'blue',
+    color: 'white',
+    padding: '10px 20px',
+    textDecoration: 'none',
+    borderRadius: '5px',
+    border: 'none',
+    cursor: 'pointer',
+    textAlign: 'center',
+  }}
+>
+  Back
+</Link>
      
     </main>
 

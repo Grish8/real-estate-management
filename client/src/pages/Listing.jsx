@@ -75,7 +75,7 @@ export default function Listing() {
             ))}
           </Swiper>
 
-          
+
           <div className='fixed top-[13%] right-[3%] z-10 border rounded-full w-12 h-12 flex justify-center items-center bg-slate-100 cursor-pointer'>
             <FaShare
               className='text-slate-500'
@@ -141,6 +141,8 @@ export default function Listing() {
                 {listing.furnished ? 'Furnished' : 'Unfurnished'}
               </li>
             </ul>
+
+            
             {currentUser && listing.userRef !== currentUser._id && !contact && (
              
              <button
@@ -151,10 +153,17 @@ export default function Listing() {
               </button>
               
             )}
+    
             {contact && <Contact listing={listing} />}
+
+      
           </div>
         </div>
       )}
+
+    
     </main>
+
+    
   );
 }

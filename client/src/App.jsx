@@ -10,7 +10,12 @@ import CreateListing from './pages/CreateListing';
 import UpdateListing from './pages/UpdateListing';
 import Listing from './pages/Listing';
 import Search from './pages/Search';
-import TenantManagement from './pages/Tenant';
+
+
+
+import TenantPage from './pages/Tenant';
+import LandlordView from './pages/LandlordView';
+
 
 export default function App() {
   return (
@@ -32,8 +37,9 @@ export default function App() {
             element={<UpdateListing />}
           />
         </Route>
-
-        <Route path='/tenant' element={<TenantManagement/>} />
+       
+        <Route path='/tenant' element={<TenantPage/>} />
+        <Route path='/landlord' element={<LandlordView/>} />
       </Routes>
     </BrowserRouter>
   );

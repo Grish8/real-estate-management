@@ -44,6 +44,15 @@ export default function SignIn() {
 
   return (
      <div className='p-3 max-w-lg mx-auto'>
+
+     <Link to='/tenant'>
+  <li className='hidden sm:inline text-slate-700 hover:underline bg-green-500 text-white rounded-full py-2 px-4 sm:text-left'>
+    Tenants
+  </li>
+</Link> 
+
+
+
       <h1 className='text-3xl text-center font-semibold my-7'>Sign In</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
       
