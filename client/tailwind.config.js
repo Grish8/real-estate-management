@@ -9,8 +9,11 @@ export default {
   },
   plugins: [
     
-    require('@tailwindcss/line-clamp'),
-    // ...
   
+    // ...
+    {/*
+warn - As of Tailwind CSS v3.3, the `@tailwindcss/line-clamp` plugin is now included by default.
+warn - Remove it from the `plugins` array in your configuration to eliminate this warning.
+  */}
   ],
 }
