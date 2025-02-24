@@ -5,5 +5,5 @@ To view the user interface of the WebApp,
 <br>then run: npm run dev
 <br>npm install vite
 
-<br> change direcotry to main direcory.Then run
+<br> change directory to main direcory.Then run
      <br> npm run dev
