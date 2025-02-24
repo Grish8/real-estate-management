@@ -1,3 +1,3 @@
-To See how the user interface of website, 
+To view the user interface of the WebApp, 
 <br>first run:
-npm install vite
+<br>npm install vite
